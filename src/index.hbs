@@ -1,0 +1,51 @@
+{{#unless htmlWebpackPlugin.options.localDev}}
+{{> partials/_OPS }}
+{{/unless}}
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link inline href="main-styles.css" rel="stylesheet">
+
+    <title>Don't Miss Out on Our Limited-Time Checking Offers | Citi.com</title>
+
+    {{#if htmlWebpackPlugin.options.localDev}}
+    {{!-- Local Development --}}
+        <script>
+            window.btVars = {};
+            window.btVars.geoZip = "33133";
+
+            function TrackPixel(pixID) {
+                console.log("TrackPixel(" + pixID + ")");
+            }
+        </script>
+    {{else}}
+    {{!-- Production Code --}}
+        {{> partials/_OPSHeadSection}}
+    {{/if}}
+</head>
+
+<body>
+    {{> partials/header}}
+    <main role = "main">
+        {{> partials/sticky-entry}}
+        {{> partials/content}}
+    </main>
+    {{> partials/footer}}
+    {{> partials/modal}}
+    {{> partials/modal_speedbump}}
+    {{> partials/modal_accounts}}
+    {{> components/citi-zip-selector/zip-selector learnMoreUrl="#" cancelUrl="https://www.citi.com"}}
+	
+    <script inline type="text/javascript" src="./js/main.bundle.js"></script>
+    {{#unless htmlWebpackPlugin.options.localDev}}
+    <img role="presentation" src="<%= szTrackRedir %>id=<%= szImpressionPix %>&random=<%= szRandom %>" width="1" height="1" border="0" alt="" style="display:none;" />
+    {{/unless}}
+</body>
+
+</html>

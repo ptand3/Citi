@@ -1,0 +1,49 @@
+
+//Include prefixes, webkit, moz: @include prefix(border-radius, 4px 4px 4px 4px, webkit moz);
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+
+$mqs: (mobile: 321px, medmobile: 375px, lgmobile: 480px, tablet: 768px, desktop: 1200px, xl:1400px);
+
+@mixin smaller-than($device) {
+  $width: map-get($mqs, $device);
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin larger-than($device) {
+  $width: map-get($mqs, $device);
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin between($smallest, $largest) {
+  $min-width: map-get($mqs, $smallest);
+  $max-width: map-get($mqs, $largest);
+  @media only screen and (min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin flex() {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -o-flex;
+    display: flex;
+}
+@mixin inline-flex () {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}

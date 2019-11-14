@@ -1,0 +1,87 @@
+// _:-ms-fullscreen, :root .bottom-brandbar .citi-blue svg#logo { margin: 0 0 0 15px; } //IE11 Fix
+.bottom-brandbar {
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+    position: relative;
+    bottom: 0;
+    @include larger-than(tablet) {
+        height: 110px;
+    }
+    .dk-blue {
+        background-color: $dark_blue;
+        width: 6px;
+        height: 6px;
+        float: right;
+        clear: both;
+        @include larger-than(tablet) {
+            width: 10px;
+            height: 10px;
+        }
+    }
+    .lt-blue {
+        background-color: #46B7E6;
+        width: calc(100% - 6px);
+        height: 6px;
+        display: block;
+        float: right;
+        overflow: hidden;
+        @include larger-than(tablet) {
+            height: 10px;
+            width: calc(100% - 10px);
+        }
+    }
+    .citi-blue {
+        background-color: $citi-blue;
+        width: 54px;
+        height: 54px;
+        float: right;
+        top: 19px;
+        @include larger-than(tablet) {
+            height: 100px;
+            width: 100px;
+            top: 0;
+        }
+        svg {
+            &#bottom-logo {
+                width: 38px;
+                height: 21px;
+                margin: 15px 0 0 8px;
+                color: $white;
+                @include larger-than(tablet) {
+                    width: 68px;
+                    height: 39px;
+                    margin: 27px 0 0 18px;
+                }
+            }
+        }
+    }
+    .blue {
+        background-color: #008FC9;
+        width: 37px;
+        height: 25px;
+        float: right;
+        top: 48px;
+        @include larger-than(tablet) {
+            width: 67px;
+            margin-top: 55px;
+            height: 45px;
+            top: 0;
+        }
+    }
+    .med-blue {
+        background-color: $bright_blue;
+        width: 68px;
+        height: 8px;
+        float: right;
+        margin-top: 65px;
+        @include larger-than(tablet) {
+            width: 122px;
+            margin-top: 85px;
+            height: 15px
+        }
+    }
+    span {
+        position: relative;
+    }
+}

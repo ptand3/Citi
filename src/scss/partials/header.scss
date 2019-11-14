@@ -1,0 +1,114 @@
+// _:-ms-fullscreen, :root header .citi-blue svg#logo { margin: 0 0 0 10px; } //IE11 Fix
+
+header {
+    width: 100%;
+    height: 8px;
+    margin: 0 auto;
+
+    @include larger-than(tablet) {
+        height: 10px;
+    }
+
+    .dk-blue {
+        background-color: $dark_blue;
+        width: 8px;
+        height: 8px;
+        float: left;
+
+        @include larger-than(tablet) {
+            width: 10px;
+            height: 10px;
+        }
+    }
+
+    .lt-blue {
+        background-color: #46B7E6;
+        width: 100%;
+        height: 8px;
+        display: block;
+
+        @include larger-than(tablet) {
+            height: 10px;
+        }
+    }
+
+    .citi-blue {
+        background-color: $citi-blue;
+        width: 47px;
+        height: 48px;
+        position: absolute;
+
+        @include larger-than(tablet) {
+            height: 60px;
+            width: 60px;
+        }
+
+        svg {
+
+            &#top-logo {
+                width: 32px;
+                height: 18px;
+                margin: 12px 0 0 8px;
+                color: $white;
+
+                @include larger-than(tablet) {
+                    width: 41px;
+                    height: 23px;
+                    margin: 18px 0 0 7px;
+                }
+            }
+        }
+    }
+
+    span {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    // USE CODE BELOW IF USING HEADER WITH SUBNAV
+    nav {
+
+        position: absolute;
+        top: 36px;
+        left: 95px;
+        z-index: 99;
+        @extend .font_regular;
+
+
+        a {
+            display: inline-block;
+            color: $near_black;
+            text-decoration: none;
+            font-size: 16px;
+            line-height: 30px;
+            padding: 0 10px;
+            margin-right: 20px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover,
+            &:focus {
+                color: $bright_blue;
+                border-bottom: 5px solid $bright_blue;
+
+            }
+
+            &.active {
+                color: $citi_blue;
+                border-bottom: 5px solid $citi_blue;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+// SVG classes for logo
+.cls-1 {
+    fill: red;
+}
+
+.cls-2 {
+    fill: #fff;
+}

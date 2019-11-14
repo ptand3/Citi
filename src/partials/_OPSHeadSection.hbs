@@ -1,0 +1,123 @@
+	<style>html{display : none ; }</style>
+	<script language="javascript">
+    if (self == top) {
+        document.documentElement.style.display = 'block';
+    } else {
+        top.location = self.location;
+    }
+	
+	var bt_console = window.location.href.toLowerCase().indexOf('bt_console=1') >= 0;
+
+    function TrackPixel(pixID) 
+	{
+         var r = Math.random() * 100000000;
+        var imgPixel = new Image(1, 1);
+        szPixSrcURL = "<%= szTrackRedir %>id=" + pixID + "&r=" + r;
+        imgPixel.src = szPixSrcURL;
+
+        var cmd = "";
+        var t = setTimeout(cmd, 900);
+    }
+
+	window.btVars = {};
+    {{#if htmlWebpackPlugin.options.localDev}}
+    {{!-- Local Development --}}
+	window.btVars.geoZip = "33133";
+	var szApplyNow200 = "";
+	var szApplyNow400Regular = "";
+	var szApplyNow400Interest = "";
+	var szApplyNow700Regular = "";
+	var szApplyNow700Interest = "";
+	//==Main
+	var szApplyNow200MainPix = "";
+	var szApplyNow400MainPix = "";
+	var szApplyNow400RegularMainPix = "";
+	var szApplyNow400InterestMainPix = "";
+	var szApplyNow700MainPix = "";
+	var szApplyNow700RegularMainPix = "";
+	var szApplyNow700InterestMainPix = "";
+	//==Get Started
+	var szApplyNow200GetStartedPix = "";
+	var szApplyNow400GetStartedPix = "";
+	var szApplyNow400RegularGetStartedPix = "";
+	var szApplyNow400InterestGetStartedPix = "";
+	var szApplyNow700GetStartedPix = "";
+	var szApplyNow700RegularGetStartedPix = "";
+	var szApplyNow700InterestGetStartedPix = "";
+	//==Sticky
+	var szApplyNow200StickyPix = "";
+	var szApplyNow400StickyPix = "";
+	var szApplyNow400RegularStickyPix = "";
+	var szApplyNow400InterestStickyPix = "";
+	var szApplyNow700StickyPix = "";
+	var szApplyNow700RegularStickyPix = "";
+	var szApplyNow700InterestStickyPix = "";
+	//==PromoCodes
+	var szOfferCode200 = "";
+	var szOfferCode400 = "";
+	var szOfferCode700 = "";
+    {{else}}
+    {{!-- Production Code --}}
+	<% if(zipSelectorData != "" && zipSelectorData != undefined){ %>
+	window.btVars.zipSelectorData = <%= zipSelectorData %>;
+	<% } %>
+	window.btVars.geoZip = "<%= szGeoZip %>";
+	var szApplyNow200 = "<%= szApplyNow200 %>";
+	var szApplyNow400Regular = "<%= szApplyNow400Regular %>";
+	var szApplyNow400Interest = "<%= szApplyNow400Interest %>";
+	var szApplyNow700Regular = "<%= szApplyNow700Regular %>";
+	var szApplyNow700Interest = "<%= szApplyNow700Interest %>";
+	//==Main
+	var szApplyNow200MainPix = "<%= szApplyNow200MainPix %>";
+	var szApplyNow400MainPix = "<%= szApplyNow400MainPix %>";
+	var szApplyNow400RegularMainPix = "<%= szApplyNow400RegularMainPix %>";
+	var szApplyNow400InterestMainPix = "<%= szApplyNow400InterestMainPix %>";
+	var szApplyNow700MainPix = "<%= szApplyNow700MainPix %>";
+	var szApplyNow700RegularMainPix = "<%= szApplyNow700RegularMainPix %>";
+	var szApplyNow700InterestMainPix = "<%= szApplyNow700InterestMainPix %>";
+	//==Get Started
+	var szApplyNow200GetStartedPix = "<%= szApplyNow200GetStartedPix %>";
+	var szApplyNow400GetStartedPix = "<%= szApplyNow400GetStartedPix %>";
+	var szApplyNow400RegularGetStartedPix = "<%= szApplyNow400RegularGetStartedPix %>";
+	var szApplyNow400InterestGetStartedPix = "<%= szApplyNow400InterestGetStartedPix %>";
+	var szApplyNow700GetStartedPix = "<%= szApplyNow700GetStartedPix %>";
+	var szApplyNow700RegularGetStartedPix = "<%= szApplyNow700RegularGetStartedPix %>";
+	var szApplyNow700InterestGetStartedPix = "<%= szApplyNow700InterestGetStartedPix %>";
+	//==Sticky
+	var szApplyNow200StickyPix = "<%= szApplyNow200StickyPix %>";
+	var szApplyNow400StickyPix = "<%= szApplyNow400StickyPix %>";
+	var szApplyNow400RegularStickyPix = "<%= szApplyNow400RegularStickyPix %>";
+	var szApplyNow400InterestStickyPix = "<%= szApplyNow400InterestStickyPix %>";
+	var szApplyNow700StickyPix = "<%= szApplyNow700StickyPix %>";
+	var szApplyNow700RegularStickyPix = "<%= szApplyNow700RegularStickyPix %>";
+	var szApplyNow700InterestStickyPix = "<%= szApplyNow700InterestStickyPix %>";
+	//==PromoCodes
+	var szOfferCode200 = "<%= szOfferCode200 %>";
+	var szOfferCode400 = "<%= szOfferCode400 %>";
+	var szOfferCode700 = "<%= szOfferCode700 %>";
+    {{/if}}
+        
+	</script>
+	<!-- Begin Citi Data Layer Tag -->
+	<script>
+    var citiData = {
+        "CUUID": "",
+        "pageDef": "Sapient_cbol_checking_tiered_offer",
+        "pageName": "DP_checking_tiered_offer",
+        "channel": "BANKPublic",
+        "siteSection1": "Sapient",
+        "siteSection2": "ACQ",
+        "siteSection3": "BANK",
+        "siteSection4": "Affiliate",
+        "country": "US",
+        "pageLanguage": "english",
+        "pageCat": "landing page",
+        "domain": "banking.citi.com",
+        "responsive": "Yes"
+    }
+	</script>
+	<!-- End Citi Data Layer Tag -->
+	{{#unless htmlWebpackPlugin.options.localDev}}
+	<script type="text/javascript" src="<%= getTagManagerDomain() %>"></script>
+	{{/unless}}
+	

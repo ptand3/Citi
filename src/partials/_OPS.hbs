@@ -1,0 +1,104 @@
+<%@  language="JavaScript" %>
+<!-- #include virtual="/cbol/checking-tiered-offer/ops/_dynamic.asp" -->
+<%
+Response.Expires = -1;
+Response.AddHeader("X-FRAME-OPTIONS", "DENY");
+
+var szDefaultBTData = "HbI.B.gAAAf.B.Bwk.SDMP.KML.kye.E";
+TrackSplash( szDefaultBTData );
+
+var szRandom = Math.floor(Math.random()*1000000000000000000);
+
+var szRedir = "/cbol/16/_bt_appredir.asp";
+var szTrackRedir;
+if( szHost == "banking.citi.com")
+{
+    szTrackRedir = "//citi.bridgetrack.com/track/?";
+}
+else
+{
+    szTrackRedir = "/track/?";
+}
+
+
+var pApplyNow200 = new Parameters( szRedir, null );
+    pApplyNow200.AddQS();
+	pApplyNow200.Remove("Promo_ID");
+    pApplyNow200.Add("TID","150690");     
+	pApplyNow200.Remove("ef_id");	
+	pApplyNow200.Remove("sc");	
+	pApplyNow200.Remove("channel");
+	pApplyNow200.Remove("GS");
+var szApplyNow200 = pApplyNow200.GetStringURL();
+
+var pApplyNow400Regular = new Parameters( szRedir, null );
+    pApplyNow400Regular.AddQS();
+	pApplyNow400Regular.Remove("Promo_ID");
+    pApplyNow400Regular.Add("TID","150688");  
+	pApplyNow400Regular.Remove("ef_id");
+	pApplyNow400Regular.Remove("sc");	
+	pApplyNow400Regular.Remove("channel");
+	pApplyNow400Regular.Remove("GS");
+var szApplyNow400Regular = pApplyNow400Regular.GetStringURL();	
+    
+var pApplyNow400Interest = new Parameters( szRedir, null );
+    pApplyNow400Interest.AddQS();
+	pApplyNow400Interest.Remove("Promo_ID");
+    pApplyNow400Interest.Add("TID","150689"); 
+	pApplyNow400Interest.Remove("ef_id");	
+	pApplyNow400Interest.Remove("sc");
+	pApplyNow400Interest.Remove("channel");
+	pApplyNow400Interest.Remove("GS");
+var szApplyNow400Interest = pApplyNow400Interest.GetStringURL();
+	
+var pApplyNow700Regular = new Parameters( szRedir, null );
+    pApplyNow700Regular.AddQS();
+	pApplyNow700Regular.Remove("Promo_ID");
+    pApplyNow700Regular.Add("TID","150691");   
+	pApplyNow700Regular.Remove("ef_id");	
+	pApplyNow700Regular.Remove("sc");
+	pApplyNow700Regular.Remove("channel");	
+	pApplyNow700Regular.Remove("GS");	
+var szApplyNow700Regular = pApplyNow700Regular.GetStringURL();	
+    
+var pApplyNow700Interest = new Parameters( szRedir, null );
+    pApplyNow700Interest.AddQS();
+	pApplyNow700Interest.Remove("Promo_ID");
+    pApplyNow700Interest.Add("TID","150692");
+	pApplyNow700Interest.Remove("ef_id");	
+	pApplyNow700Interest.Remove("sc");
+	pApplyNow700Interest.Remove("channel");
+	pApplyNow700Interest.Remove("GS");
+var szApplyNow700Interest = pApplyNow700Interest.GetStringURL();
+	
+	
+var pVisitCitiBranch = new Parameters( szTrackRedir, null );
+    pVisitCitiBranch.Add("TGT","22471");
+	
+var pFindATMNearYou = new Parameters( szTrackRedir, null );
+    pFindATMNearYou.Add("TGT","150521");
+
+var pCitiLogoFooter = new Parameters( szTrackRedir, null );
+    pCitiLogoFooter.Add("TGT","28718");
+
+var pTermsAndConditionsLink = new Parameters( szTrackRedir, null );
+    pTermsAndConditionsLink.Add("TGT","28715");
+
+var pPrivacyLink = new Parameters( szTrackRedir, null );
+    pPrivacyLink.Add("TGT","28717");
+
+var pSecurityLink = new Parameters( szTrackRedir, null );
+    pSecurityLink.Add("TGT","28716");
+
+var pContactUsLink = new Parameters( szTrackRedir, null );
+    pContactUsLink.Add("TGT","143095");
+
+var pFacebookLink = new Parameters( szTrackRedir, null );
+    pFacebookLink.Add("TGT","143097");
+
+var pTwitterLink = new Parameters( szTrackRedir, null );
+    pTwitterLink.Add("TGT","143098");
+
+var pYoutubeLink = new Parameters( szTrackRedir, null );
+    pYoutubeLink.Add("TGT","143100");
+%>

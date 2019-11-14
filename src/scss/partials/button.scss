@@ -1,0 +1,52 @@
+//Citi Button
+.citi-btn {
+    border: 0;
+    outline: none;
+    width: 218px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    @extend .font_bold;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 6px;
+    text-decoration: none;
+   
+    &.btn-blue {
+        color: $white;
+        background-color: $citi_blue;
+        &:focus:not(.touch-device),
+        &:hover:not(.touch-device) {
+            color: $white;
+            background-color: $dark_blue;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &.btn-dkblue {
+        color: $white;
+        background-color: $dark_blue;
+        &:focus:not(.touch-device),
+        &:hover:not(.touch-device) {
+            background-color: $citi_blue;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &.btn-bright-blue {
+        color: $dark_blue;
+        background-color: $bright_blue;
+        &:focus:not(.touch-device),
+        &:hover:not(.touch-device) {
+            color: $dark_blue;
+            background-color: $white;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

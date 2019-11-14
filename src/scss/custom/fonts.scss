@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'interstateregular';
+     src:url('//sec-citi.bridgetrack.com/fonts/interstate-regular.woff') format('woff'),
+         url('//sec-citi.bridgetrack.com/fonts/interstate-regular.ttf') format('truetype'),
+         url('//sec-citi.bridgetrack.com/fonts/interstate-regular.svg#interstateregular') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'interstate-bold';
+    src: url('//sec-citi.bridgetrack.com/fonts/interstate-bold.woff') format('woff'),
+         url('//sec-citi.bridgetrack.com/fonts/interstate-bold.ttf') format('truetype'),
+         url('//sec-citi.bridgetrack.com/fonts/interstate-bold.svg#interstate-bold') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'interstate-light';
+    src: url('//sec-citi.bridgetrack.com/fonts/interstate-light.woff') format('woff'),
+         url('//sec-citi.bridgetrack.com/fonts/interstate-light.ttf') format('truetype'),
+         url('//sec-citi.bridgetrack.com/fonts/interstate-light.svg#interstate-light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+.font_regular {
+    font-family: 'interstateregular';
+    font-weight: 300;
+}
+.font_bold {
+   font-family: "interstate-bold";
+   font-weight: 300;
+}
+
+.font_light {
+   font-family: "interstate-light";
+   font-weight: 300;
+}

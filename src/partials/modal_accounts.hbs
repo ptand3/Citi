@@ -1,0 +1,39 @@
+<!-- <div class="modal-overlay accounts hidden" trigger-class="open-modal-accounts" role="dialog">
+	<div class="modal-box tooltip-container">
+		<h2 class="modal-title">You’re applying for the<br>Citibank<sup>&reg;</sup> Account Package.</h2>
+		<p class="modal-subtitle">Now select the type of account you would like to open:</p>
+		<form action="" name="stateSelector" class="state-form">
+            <fieldset >
+                <label tabindex="0" class="radio_btn"><input type="radio" name="accounts" value="regular"> Regular Checking and Citi Savings</label>
+                <label tabindex="0" class="radio_btn"><input type="radio" name="accounts"  value="interest"> Interest Checking and Citi Savings</label>			
+                <label class="select-error hidden" role="alert" for="accounts">Error: Please select your account.</label>
+                <section>
+                    <p><span class="tooltip-trigger on-top" aria-labelledby="tooltip1" tabindex="0">?</span></p>
+		            <p class="tooltip-text hidden" id="tooltip1" role="tooltip" aria-hidden="true">Choose either an interest-bearing checking account (Interest Checking) or one that does not earn interest (Regular Checking).</p>                    
+                </section>               
+				<button class="citi-btn btn-blue submit">Go to Application</button>
+                <input type="submit" name="btnSubmit" value="Go to Application">
+                <button class="close-dialog" type="button" aria-label="close">&times;</button>
+            </fieldset>            
+		</form>
+	</div>
+</div> -->
+
+
+
+ <div class="modal-overlay accounts hidden" data-class="open-modal-accounts" role="dialog" arial-modal="true">
+    <div class="modal-box tooltip-container">
+        <h2 class="modal-title">Choose the type of account you'd like to open:</h2>
+        <div class="cta-wrapper">
+            <div class="cta-container">
+                <button id="regular" class="citi-btn btn-dkblue submit">Regular Checking</button>
+                <p>Earn no interest on your checking account balance</p>
+            </div>
+            <div class="cta-container">
+                <button id="interest" class="citi-btn btn-dkblue submit">Interest Checking</button>
+                <p>Earn interest on your checking account balance</p>
+            </div>
+        </div>
+        <button class="close-dialog" type="button" aria-label="close">&times;</button>
+    </div>
+</div>

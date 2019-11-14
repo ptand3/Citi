@@ -1,0 +1,403 @@
+ /* IE11 */
+_:-ms-fullscreen, :root footer .wrapper {width: 90%;}
+
+footer {
+    background-color: $near_black;
+    padding: 20px 0;
+    color: $white;
+
+    a {
+        color: $white;
+        text-decoration: none;
+        display: inline-block;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .wrapper {
+        
+        position: relative;
+        max-width: 1392px;
+        margin: 0 auto;
+        display: block;
+        box-sizing: border-box;
+        width: 90%;
+        padding: 0;
+        @include larger-than(tablet){
+            padding:0;
+        }
+
+        a.logo svg {
+            display: inline-block;
+            margin-bottom: 25px;
+            width: 44px;
+            height: 26px;
+
+            @include larger-than(tablet) {
+                margin-bottom: auto;
+            }
+        }
+
+        ul {
+            &.footer_menu {
+                margin: 0;
+                padding: 0;
+
+                @include larger-than(tablet) {
+                    position: absolute;
+                    top: 9px;
+                    right: 132px;
+                }
+
+
+                li {
+
+                    padding-bottom: 15px;
+                    @extend .font_bold;
+                    font-size: 15px;
+                    line-height: 24px;
+                    display: block;
+
+                    @include larger-than(tablet) {
+                        display: inline;
+                        padding-right: 10px;
+                    }
+                    @include larger-than(desktop) {
+                        padding-right: 18px;
+                    }
+
+
+                    a {
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+                }
+            }
+            &.social {
+                position: absolute;
+                right: 25px;
+                top: -9px;
+                list-style: none;
+
+                @include larger-than(tablet) {
+                    right: 0;
+                }
+
+                li {
+                    margin-right: 15px;
+                    display: inline-flex;
+                }
+                a.fb,
+                a.tw,
+                a.yt {
+                    font-size: 0;
+                    line-height: 0;
+                }
+                .fb {
+                    height: 12px;
+                    width: 12px;
+                    
+                    @include larger-than(tablet) {
+                        padding-right: 5px;
+                    }
+                }
+
+                .tw {
+                    height: 12px;
+                    width: 14px;
+                    @include larger-than(tablet) {
+                        padding-right: 10px;
+                    }
+                }
+
+                .yt {
+                    height: 14px;
+                    width: 16px;
+                     @include larger-than(tablet) {
+                        margin-right: 0;
+                    }
+                }
+            }
+        } // END UL
+        .content {
+            padding-top: 20px;
+            height: max-content;
+            
+            p {
+                margin: 1em 0;
+                padding: 0;
+                @extend .font_light;
+                font-size: 12px;
+                line-height: 18px;
+                color: $white; 
+
+                @include larger-than(tablet){
+                    padding: 0;
+                }             
+            }
+            a {
+                text-decoration: underline;
+            }
+            .utilities {
+                float: right;
+                margin-top: -20px;
+                height: 30px;
+
+                a {
+                    font-size: 12px;
+                    @extend .font_light;
+                    @include larger-than(desktop) {
+                        display: block;
+                        display: inline;
+                        text-decoration: none;
+                    }
+
+                    &:first-child {
+                        margin-right: 15px;
+                    }
+
+                    svg {
+                        width: 15px;
+                        height: auto;
+                        color: #fff;
+                        padding-left: 4px;
+                    }
+                }
+            }
+            //END UTILITIES
+
+            h2 {
+                color: $white;
+                margin: 0 0 10px;
+                padding: 5px 5px  5px 0;
+                outline: none;
+                @extend .font_bold;
+                line-height: 25px;
+                cursor: pointer;
+                font-size: 11px;
+                background-color: transparent;
+                border: none;
+                @include larger-than(tablet){
+                    font-size: 14px;
+                }
+                button{
+                    color: #fff;
+                    padding: 5px;
+                    outline: 0;
+                    font-size: 14px;
+                    cursor: pointer;
+                    background-color: transparent;
+                    border: none;
+                    @extend .font_bold;
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        transition: all .4s ease;
+                        -webkit-transform: rotate(180deg);
+                        transform: rotate(-180deg);
+                        margin-right: 10px;
+                        background: url('../images/footer_accordion_arrow.svg') no-repeat 50%;
+                        width: 14px;
+                        height: 7px;
+
+                    }
+    
+                    &.active {
+    
+                        &:before {
+                            transform: rotate(0deg);
+                            top: 20px;
+                            left: -3px;
+                        }
+                    }
+                    &:focus {
+                        outline: 1px solid;
+                    }
+                }       
+            }
+
+            .panel {
+                max-height: 0;
+                overflow: hidden;
+                transition: all 0.4s ease;
+                opacity: 0;
+                display: none;
+                  .heading{
+                     strong{
+                         font-size: 14px;
+                    }
+                }
+                a {
+                    text-decoration: underline;
+                }            
+                
+                .tax-info{
+                    margin-top:1em !important;
+                }
+                .terms-container{
+                    h3{
+                        font-size: 14px;
+                        @extend .font_bold;
+                        margin-top:0;
+                    }
+                    h4{
+                        margin:0;
+                        font-size: 12px;
+                        @extend .font_bold;
+                    }
+                    p{
+                        margin-top:0;
+                    }
+                    // .package-options{
+                    //     padding-bottom: 20px;
+                    // }
+                    .package-options-p{
+                        // margin-bottom: 0;
+                        @extend .font_bold;
+                    }
+                    ul{
+                        margin-top: 0;
+                        li{
+                            p{
+                                margin-bottom: 0;
+                            }
+                        }
+                        .chart{
+                            list-style: none;
+                            padding-right: 17px;
+                            h4{
+                                text-align: center;
+                                padding-top: 25px;
+                            }
+                            @include larger-than(tablet){
+                                padding-right: 0;
+                            }
+                        }
+                        @include larger-than(tablet){
+                            padding-inline-start:45px;
+                        }
+                        padding-inline-start:17px;
+                    }
+                    .first-list{
+                        margin-bottom: 0;
+                    }
+                    .basic-banking-note{
+                      padding: 0;
+                       margin-bottom: 0;
+                       @include larger-than(tablet) {
+                           padding-left: 28px;
+                           // padding-inline-start: 28px;
+                           // -webkit-padding-start: 28px; 
+                       }
+                    }
+                    .required-activities-p{
+                        margin-bottom: 0;
+                    }
+                    .required-activities{
+                        margin-bottom: 2px;
+                    }
+                    .note-italic{
+                        @extend .font_bold;
+                        font-style: italic;
+                    }
+                    .note{
+                        @extend .font_bold;
+                        font-size: 12px;
+                        line-height: 18px;
+                        font-style: italic;
+                        .one-line{
+                            display: inline-block;
+                        }
+                     }
+                    .bold{
+                        @extend .font_bold;
+                    }
+                    table, th, td{
+                        border: solid 1px #fff;
+                        border-collapse: collapse;
+                    }
+                    table{
+                        text-align: center;
+                        margin: 25px auto;
+                        width:100%;
+                        @include larger-than(tablet){
+                            width:60%;
+                        }
+                        th{
+                            padding: 10px;
+                            width:25%;
+                            p{
+                                @extend .font_bold;
+                            }
+                        }
+                        td{
+                            padding: 10px;
+                            width:25%;
+                            .accountAria {
+                                display: flex;
+                                overflow: hidden;
+                                height: 0;
+                                width: 0;
+                                border: 1px solid transparent;
+   
+                                @include larger-than(tablet) {
+                                    text-indent: -99999999px;
+                                }
+                            }
+                        }
+                    }
+                } 
+            }
+
+            .panel-open {
+                max-height: 100%;
+                transition: all 0.4s ease;
+                opacity: 1;
+                display: block;
+            }
+            .back-to-top{
+                text-decoration: none;
+            }
+        }
+        .bottom_section {
+            padding-top: 20px;
+            position: relative;
+            small {
+                color: $white;
+                font-size: 11px;
+                padding: 15px 0;
+                @extend .font_bold;
+                display: inline-block;
+            }
+            ul {
+                position: absolute;
+                right: 40px;
+                top: 0;
+                margin: 0;
+                padding: 0;
+
+                @include larger-than(tablet){
+                    right: 0px;
+                }
+
+                li {
+                    position: static;
+                    display: inline-block;
+                    padding: 0;
+                    &.fdic {
+                        margin-right: 20px;
+                    }
+                }
+            }
+           @include larger-than(tablet){
+                    padding: 20px 0;
+                } 
+        }
+    }
+}
+
+    

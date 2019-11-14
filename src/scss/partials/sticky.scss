@@ -1,0 +1,278 @@
+.sticky-bar {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    align-content: center;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 75px;
+    max-height: 0;
+    background-color: $dark_blue;
+    color: $white;
+    visibility: hidden;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.1s, opacity 0.2s;
+    box-shadow: 0 3px 3px 0 rgba(173, 171, 173, .7);
+    font-size: 14px;
+
+    @include larger-than(tablet) {
+        height: 135px;
+    }
+
+    .sticky-wrapper {
+        display: flex;
+        flex-direction: row;
+
+        @include larger-than(tablet) {
+            max-width: 1025px;
+            // width:90%;
+        }
+
+        @include larger-than(desktop) {
+            width: 100%;
+        }
+
+        .left-content {
+            margin: 15px 22px 0 5px;
+
+            @include larger-than (tablet) {
+                display: flex;
+                flex-direction: row;
+                margin: 15px 0px 15px 15px;
+                align-self: center;
+            }
+
+            @include larger-than (desktop) {
+                margin: 0;
+                align-self: auto;
+            }
+
+            .heading{
+                line-height: 1;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .offer-700 {
+                display: block;
+                @extend .font_bold;
+                font-size: 22px;
+                @include larger-than (tablet) {
+                    @include inline-flex();
+                    // display: inline-flex;
+                    text-align: center;
+                    margin: 0;
+                    font-family: "interstate-light";
+                }
+
+                @include larger-than (desktop) {
+                    // margin: auto;
+                    margin: 30px 0px;
+                }
+
+                // .sticky-content{
+                //     @include larger-than (tablet) {
+                //         font-size: 35px;
+                //         padding: 2px;
+                //     }
+
+                //     @include larger-than (desktop) {
+                //         font-size: 51px;
+                //     }
+                // }
+
+                .earn {
+                    @include larger-than (tablet) {
+                        font-size: 35px;
+                        padding: 2px;
+                    }
+
+                    @include larger-than (desktop) {
+                        font-size: 51px;
+                    }
+                }
+
+                .ammount {
+
+                    @include larger-than (tablet) {
+                        font-size: 35px;
+                        padding: 2px;
+                    }
+
+                    @include larger-than (desktop) {
+                        font-size: 51px;
+                    }
+                }
+
+            }
+
+            h1 {
+                @extend .font_bold;
+                font-weight: bold;
+                padding: 0;
+                font-size: 13px;
+                line-height: 15px;
+                letter-spacing: -0.04px;
+                margin: 0 0 0 8px;
+                display: none;
+                @include larger-than (tablet) {
+                    margin: 0 0px 5px 20px;
+                    font-size: 18px;
+                    line-height: 25px;
+                    display: block;
+                }
+
+                @include larger-than(desktop) {
+                    font-size: 25px;
+                    margin: 0 15px 10px 15px;
+                }
+            }
+
+            a {
+                color: $white;
+                font-size: 10px;
+                line-height: 11px;
+                margin: 0 0 0 0;
+                @extend .font_light;
+
+                @include larger-than(tablet) {
+                    display: block;
+                    font-size: 14px;
+                    line-height: 20px;
+                    letter-spacing: -0.04px;
+                    margin-left: 20px;
+                }
+
+                &:focus,
+                &:hover {
+                    color: $bright_blue;
+                }
+
+            }
+
+        }
+
+        .right-content {
+            margin: 10px 7px 0px 0px;
+
+            @include larger-than(tablet) {
+                margin: 0px 20px 0px;
+                align-self: center;
+            }
+
+            @include larger-than(desktop) {
+                margin: 43px 0px 0px 10px;
+                align-self: auto;
+            }
+
+            .citi-btn {
+                font-size: 16px;
+                width: 125px;
+                height: 53px;
+                line-height: 53px;
+                background-color: $white;
+                color: $dark_blue;
+
+
+                @include larger-than(tablet) {
+                    width: 160px;
+                }
+
+                @include larger-than(desktop) {
+                    width: 220px;
+                    height: 50px;
+                    line-height: 50px;
+                    font-size: 18px;
+                }
+
+                &:focus,
+                &:hover {
+                    background-color: $citi_blue;
+                    color:$white;
+                }
+            }
+        }
+
+    }
+
+    // .left-content {
+    //     margin: 5px 15px 5px 10px;
+    //     @include larger-than (tablet) {
+    //         margin: 5px 140px 0 0;
+    //     }
+    //     @include larger-than (desktop) {
+    //         margin: 5px 200px 0 0;
+    //     }
+        
+    //     p {
+    //         @extend .font_bold;
+    //         font-weight: bold;
+    //         padding: 0;
+    //         margin: 0;
+    //         font-size: 12px;
+    //         margin-top: 13px;
+    //         @include larger-than(desktop) {
+    //             font-size: 24px;
+    //             margin-top: 30px;
+    //         }
+    //     }
+    //     a {
+    //         color: $white;
+    //         font-size: 10px;
+    //         @include larger-than(desktop) {
+    //             font-size: 18px;
+    //         }
+    //         &:focus,
+    //         &:hover {
+    //             color: $citi_blue;
+    //         }
+    //     }
+    //     //END A
+    // }
+    // //END LEFT CONTENT
+    // .right-content {
+    //     margin-top: 15px;
+    //     @include larger-than(desktop) {
+    //         margin-top: 40px;
+    //     }
+    //     .citi-btn {
+    //         background-color: $white;
+    //         color: $dark_blue;
+    //         font-size: 12px;
+    //         width: 125px;
+    //         height: 40px;
+    //         line-height: 40px;
+    //         margin-right: 8px;
+    //         @include larger-than(tablet) {
+    //             width: 160px;
+    //         }
+    //         @include larger-than(desktop) {
+    //             width: 220px;
+    //             height: 50px;
+    //             line-height: 50px;
+    //             font-size: 16px;
+    //         }
+    //         &:hover,
+    //         &:focus {
+    //             // background-color: $bright_blue;
+    //             background-color: $citi_blue;
+    //             color:$white;
+    //         }
+    //     }
+    // }
+}
+
+.sticky-visible {
+    visibility: visible;
+    max-height: 160px;
+    opacity: 1;
+    @include larger-than(lgmobile) {
+        max-height: 137px;
+    }
+}

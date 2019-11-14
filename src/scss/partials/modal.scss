@@ -1,0 +1,537 @@
+// /* Put here all elements you want to highlight on hover*/
+// button:hover, input:not([disabled]):hover, a:hover { 
+//     background-color: lightyellow;
+// }
+.modal-overlay {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99999;
+    overflow: scroll;
+    &[aria-hidden="true"] {
+        display: none;
+    }
+
+    &.exit {
+        .modal-box{
+            padding: 40px 15px;
+            @include larger-than(tablet) {
+                width: 90%;
+                max-width: 800px;
+            }
+            @include larger-than(desktop) {
+                padding-bottom: 70px;
+                max-width: 900px;
+            }
+            .modal-title {
+                @extend .font_regular;
+                text-align: center;
+                font-size: 24px;
+                line-height: 1.2;
+                margin: 0 auto 25px;
+                max-width: 300px;
+                color: $citi_blue;
+                @include larger-than(tablet) {
+                    font-size: 32px;
+                    line-height: 38px;
+                    max-width: 410px;
+                }
+                @include larger-than(desktop) {
+                    max-width: 700px;
+                    margin: 40px auto;
+                    letter-spacing: -0.03em;
+                }
+            }
+            .cta-wrapper {
+                max-width: 320px;
+                margin: 0 auto;
+
+                p {
+                    text-align: center;
+                    margin: 0 0 40px 0;
+                }
+            }
+            .cta-container {
+                margin: 0 auto 25px;
+                max-width: 220px;
+              
+
+                .citi-btn {
+                    color: $white;
+                    background-color: $dark_blue;
+                    text-transform: uppercase;
+                    @extend .font_regular;
+
+                    @include larger-than(tablet) {
+                        font-size: 16px;
+                    }
+                    @include larger-than(desktop) {
+                        height: 60px;
+                        line-height: 60px;
+                    }
+                }
+                .btn-ltblue {
+                    &:focus,
+                    &:hover:not(.touch-device) {
+                        color: $white;
+                        background-color: #056dae;
+                    }
+                    &:hover:not(.touch-device) {
+                        cursor: pointer;
+                    }
+                }
+                p {
+                    margin: 15px auto 0;
+                    text-align: center;
+                    font-size: 16px;
+                    line-height: 20px;
+                    max-width: 200px;
+                    color: $near_black;
+                    @include larger-than(desktop){
+                        font-size: 20px;
+                        line-height: 24px;
+                        max-width: 235px;
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .close-dialog {
+                display: block;
+                font-family: $arial;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 26px;
+                height: 26px;
+                font-size: 24px;
+                line-height: 23.5px;
+                text-align: center;
+                border: none;
+                outline: none;
+                color: $dark_gray;
+                background: $white;
+                padding: 0;
+                border-radius: 50%;
+                &:focus, &:hover {
+                    color: $white;
+                    background-color: $dark_gray;
+                }
+            }
+        }
+    }
+
+    &.accounts {
+        .modal-box{
+            padding: 40px 15px;            
+            @include larger-than(tablet) {
+                width: 90%;
+                max-width: 800px;
+            }
+            @include larger-than(desktop) {                
+                padding-bottom: 70px;
+                max-width: 900px;
+            }
+            .modal-title {
+                @extend .font_regular;
+                text-align: center;
+                font-size: 24px;
+                line-height: 1.2;
+                margin: 0 auto 25px;
+                max-width: 300px; 
+                color: $near_black;
+                @include larger-than(tablet) {
+                    font-size: 32px;
+                    line-height: 38px;
+                    max-width: 410px; 
+                }   
+                @include larger-than(desktop) {
+                    max-width: 700px; 
+                    margin: 50px auto;
+                    letter-spacing: -0.03em;
+                }      
+            }
+            .cta-wrapper {
+                @include larger-than(tablet) {
+                    max-width: 530px;
+                    margin: 0 auto;
+                    display: flex;
+                }
+                @include larger-than(desktop) {
+                    margin-top: 35px;
+                    max-width: 600px;
+                    
+                }
+            }
+            .cta-container {
+                margin: 0 auto 25px;
+                max-width: 220px;
+
+                @include larger-than(tablet) {
+                    width: 50%;
+                    display: inline-block;
+                    text-align: center;
+                    max-width: 250px;
+                }
+                @include larger-than(desktop) {
+                    max-width: 315px;
+                }
+                .citi-btn {
+                    text-transform: uppercase;
+                    @extend .font_regular;
+
+                    @include larger-than(tablet) {
+                        font-size: 16px;
+                    }
+                    @include larger-than(desktop) {
+                        height: 60px;
+                        line-height: 60px;
+                    }
+                    &:focus, &:hover:not(.touch-device) {
+                        color: $white;
+                        background-color: $dark_blue;
+                    }
+                    &:hover:not(.touch-device) {
+                        cursor: pointer;
+                    }
+                }
+                .btn-ltblue {
+                    &:focus,
+                    &:hover:not(.touch-device) {
+                        color: $white;
+                        background-color: $dark_blue;
+                    }
+                    &:hover:not(.touch-device) {
+                        cursor: pointer;
+                    }
+                } 
+                p {
+                    margin: 15px auto 0;
+                    text-align: center;
+                    font-size: 16px;
+                    line-height: 20px;
+                     max-width: 200px;
+                     color: $near_black;
+                     @include larger-than(desktop){
+                        font-size: 20px;
+                        line-height: 24px;
+                        max-width: 235px;
+                     }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }            
+            
+            .close-dialog {
+                display: block;
+                font-family: $arial;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 26px;
+                height: 26px;
+                font-size: 24px;
+                line-height: 23.5px;
+                text-align: center;
+                border: none;
+                outline: none;
+                color: $dark_gray;
+                background: $white;
+                padding: 0;
+                border-radius: 50%;
+                &:focus, &:hover {
+                    color: $white;
+                    background-color: $dark_gray;
+                }
+            }            
+        }   
+        &.offer600{
+            .modal-box .cta-container{
+                .citi-btn {
+                background-color: $dark_blue;
+                &:focus, &:hover {
+                    background-color: $citi_blue;
+                }
+            }
+            }
+        }
+        &.offer200, &.offer500{
+           .modal-box .cta-container{
+            .citi-btn {
+                background-color: $dark_blue;
+                &:focus, &:hover {
+                    background-color: $citi_blue;
+                }
+            }
+        }
+        }
+    }
+    
+    &.modal-state-selector {
+        top: 0;
+        .modal-box {
+            padding: 75px 40px 40px;
+            @include larger-than(tablet){
+                max-width: 600px;
+            }
+            .modal-title {
+                text-align: left;
+                @extend .font_light;
+                font-size: 1.625rem;
+            }
+            .modal-subtitle {
+                font-size: 1rem;
+                text-align: left;
+                max-width: 100%;
+                margin-top: 20px;
+                padding-right: 20px;
+                box-sizing: border-box;
+            }
+            .state-form {
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto;
+                text-align: center;
+                position: relative;
+                font-size: 16px;
+                @include larger-than (tablet) {
+                    max-width: none;
+                    text-align: right;
+                }
+                
+                .state-select {
+                    height: 50px;
+                    width: 100%;
+                    margin: 30px 0;
+                    padding: 0 35px 0 20px;
+                    overflow: hidden;
+                    border:1px solid $white;
+                    background: $light_gray url(../images/arrow-dropdown.svg) right 12px center no-repeat;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    border-radius: 6px;
+                    font-size: 16px;
+                    @include larger-than (tablet) {
+                        margin: 35px 0 60px;
+                    }
+                    &:focus {
+                        outline: none;
+                        border-color: $citi_blue;
+                        &::-ms-value {
+                            color: $black; 
+                            background: transparent;
+                        }
+                    }
+                    &:invalid { //Avoid Firefox red shadow
+                        box-shadow: none;
+                    }
+                    &:-moz-focusring {  //Avoid Firefox dotted line around text
+                        color: transparent;
+                        text-shadow: 0 0 0 $black;
+                        border: 1px solid $citi_blue;
+                    }
+                    &::-ms-expand { //Avoid IE/Edge down arrow
+                        display: none;
+                    }
+                    &.red {
+                        border-color: $red;
+                        &:focus {
+                            border-color: $red;
+                        }
+                    }
+                    &.inline {
+                        @include larger-than (tablet) {            
+                            width: 324px;
+                            margin-right: 10px;
+                        }
+                    }
+                    
+                }
+                .select-error {
+                    font-size: 12px;
+                    line-height: 1;
+                    position: absolute;
+                    left: 2px;
+                    top: 84px;
+                    color: $red;
+                    @include larger-than (tablet) {
+                        top: 90px;
+                    }
+                }
+                .select {
+                    margin: 0 10px;
+                    display: inline-block;
+                    -webkit-appearance: unset; 
+                }
+                .cancel {
+                    font-size: 16px;
+                    color: $citi_blue;
+                    text-decoration: underline;
+                    background-color: $white;
+                    outline: none;
+                    margin-top: 10px;
+                    border: 1px solid $white;
+                    border-radius: 6px;
+                    height: 48px;
+                    &:focus:not(.touch-device),
+                    &:hover:not(.touch-device) {
+                        border-color: $citi_blue;
+                    }
+                    &:hover:not(.touch-device) {
+                        cursor: pointer;
+                    }
+                }
+                .btn-blue {
+                    color: $white;
+                    background-color: $citi_blue;
+                    &:focus:not(.touch-device),
+                    &:hover:not(.touch-device) {
+                        background-color: $dark_blue;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                    }
+                } 
+            }
+            .close-dialog{
+                font-family: Arial, Helvetica, sans-serif;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                color: $dark_gray;
+                font-size: 20px;
+                background-color: transparent;
+                border: 0px solid $white;
+                outline: none;
+                line-height: 20px;
+                background-image: none;
+                &::after {
+                    content: "";
+                }
+                &:focus:not(.touch-device)  {
+                    border-color: $dark_gray;
+                }
+                &:hover:not(.touch-device) {
+                    cursor: pointer;
+                    color: $white;
+                    background-color:$dark_gray;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    .modal-box {
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 15px 40px;
+        background: $white;
+        position: relative;
+        &.tc {
+            @include larger-than (lgmobile) {
+                width: 480px;
+                margin: 100px auto;
+            }
+            @include larger-than (tablet) {
+                width: 730px;
+            }
+        }
+        @include larger-than (lgmobile) {
+            width: 480px;
+            margin: 100px auto;
+        }
+        // @include larger-than (tablet) {
+        //     width: 730px;
+        // }
+
+        .modal-title {
+            font-size: 16px;
+            line-height: 1;   
+            color: $black;  
+            text-align: center; 
+            margin: 0 auto 5px;     
+        }
+        .modal-subtitle {
+            font-size: 12px;
+            line-height: 1.4;   
+            color: $black; 
+            text-align: center; 
+            max-width: 260px;
+            margin: 0 auto 30px;
+            @include larger-than(desktop) {
+                max-width: 100%;
+            }
+        }  
+        .modal-content {
+            padding: 30px 15px;;
+            background-color: $light_gray;
+            font-size: 12px;
+            p {
+                &.tab {
+                    padding-left: 20px;
+                    box-sizing: border-box;
+                }
+            }
+        }         
+       
+        .print,
+        .download,
+        .close-dialog {
+            width: 26px;
+            height: 26px;
+            border: none;
+            outline: none;   
+            position: absolute; 
+            top: 10px;                         
+            
+            &::after {
+                content: "";
+            }
+            &:focus:not(.touch-device) {
+                border: 1px solid $dark_gray;
+            }
+            &:hover:not(.touch-device) {
+                cursor: pointer;
+                
+            }
+            
+            right: 80px;  
+            background: url(../images/icon-print.png) no-repeat center top;
+            background-size: cover;   
+        }
+        .close-dialog {
+            right: 10px;  
+            background: url(../images/icon-close.png) no-repeat center top;
+            background-size: cover;  
+        }
+        .download {
+            right: 45px;  
+            background: url(../images/icon-download.png) no-repeat center top;
+            background-size: cover;  
+            display: none;
+            @include larger-than(desktop) {
+                display: inline-block;
+            }
+        }
+        .print {
+            right: 80px;  
+            background: url(../images/icon-print.png) no-repeat center top;
+            background-size: cover;  
+            display: none;
+            @include larger-than(desktop) {
+                display: inline-block;
+            }
+        }
+
+        
+    }
+}
+.hidden {
+    display: none!important;
+}

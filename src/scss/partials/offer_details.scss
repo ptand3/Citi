@@ -1,0 +1,510 @@
+.offer-details {
+    .box {
+        margin-top: 6px;
+        padding: 0 0 25px 0;
+        background-color: $white;
+
+        @include larger-than(tablet) {
+            max-width: 1362px;
+            margin: 0 auto;
+            padding: 0px 0 34px;
+        }
+
+        .top {
+            width: 100%;
+            margin: 0 auto;
+            background-color: $dark_blue;
+            @include flex();
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 10px 4px 56px 10px rgba(219, 219, 219, 0.5);
+
+            @include larger-than(tablet) {
+                width: 100%;
+                flex-direction: row;
+                box-shadow: none;
+            }
+
+            .heading {
+                line-height: 1;
+
+                .offerTitle {
+                    display: block;
+                    @extend .font_regular;
+                    color: $white;
+                    font-size: 28px;
+                    text-align: center;
+                    padding-top: 30px;
+
+                    @include larger-than(tablet) {
+                        font-size: 34px;
+                        padding: 0 15%;
+                        padding-bottom: 12px;
+
+                    }
+
+                    @include larger-than(desktop) {
+                        font-size: 42px;
+                        padding-top: 0;
+                    }
+                }
+
+                .remaining {
+                    display: block;
+                    line-height: 1.3;
+                    @extend .font_light;
+                    text-align: center;
+                    color: $white;
+                    margin: 0 auto;
+                    font-size: 16px;
+                    padding: 15px 12px 30px 12px;
+
+                    @include larger-than(tablet) {
+                        text-align: center;
+                        margin: 0 auto;
+                        font-size: 16px;
+                        padding: 0 15%;
+                    }
+
+                    @include larger-than(desktop) {
+                        font-size: 23px;
+                    }
+                }
+
+                @include larger-than(tablet) {
+                    width: 70%;
+                    padding: 0;
+                }
+            }
+
+            .offer-img {
+                width: 100%;
+                height: auto;
+
+                @include larger-than(tablet) {
+                    width: 30%;
+                    height: auto;
+                }
+            }
+        }
+
+        .bottom {
+            @include flex();
+            flex-direction: column;
+            margin: 0 auto;
+            width: 90%;
+
+            //            box-shadow: 10px 4px 16px 10px rgba(219, 219, 219, 0.5);
+            @include larger-than(tablet) {
+                width: 100%;
+                margin: 0 auto;
+                flex-direction: row;
+                padding: 2% 0 3% 0;
+                //                box-shadow: 10px 4px 30px 10px rgba(219, 219, 219, 0.5);
+            }
+
+            span {
+                &.title {
+                    display: block;
+                    @extend .font_regular;
+                    color:$near_black;
+                    position: relative;
+                    top: 2px;
+                    left: 2px;
+                    font-size: 14px;
+                    text-align: left;
+                    padding-top: 20px;
+                    text-transform: uppercase;
+
+                    @include larger-than(tablet) {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            p {
+                // color: $dark_blue;
+                color:$near_black;
+                padding-top: 14px;
+            }
+
+            .left-content {
+                width: 100%;
+                margin: 0 auto;
+
+                @include larger-than(tablet) {
+                    width: 70%;
+                    margin: 0;
+                }
+            }
+
+            .right-content {
+                width: 100%;
+                margin: 0 auto;
+
+                @include larger-than(tablet) {
+                    width: 30%;
+                    @include flex();
+                    justify-content: space-between;
+                    flex-direction: column;
+                }
+            }
+
+            .offer-content {
+                .offer {
+                    .heading {
+                        display: none;
+                        line-height: 1;
+                        padding: 0 8px;
+
+                        .dollar {
+                            display: inline-block;
+                            @extend .font_regular;
+                            color: #0f73b2;
+                            vertical-align: top;
+                            position: relative;
+                            top: 20px;
+                            font-size: 29px;
+
+                            @include larger-than(tablet) {
+                                top: 14px;
+                                font-size: 30px;
+                            }
+
+                            @include larger-than(desktop) {
+                                top: 14px;
+                                font-size: 30px;
+                            }
+                        }
+
+                        .ammount {
+                            display: inline-block;
+                            @extend .font_regular;
+                            color: #0f73b2;
+                            position: relative;
+                            left: -6px;
+                            font-size: 45px;
+                            line-height: 0.91;
+                            letter-spacing: -1.4px;
+                            padding-top: 20px;
+
+                            @include larger-than(tablet) {
+                                font-size: 56px;
+                            }
+
+                            @include larger-than(tablet) {
+                                display: inline;
+                                top: 12px;
+                                font-size: 56px;
+                            }
+                        }
+
+                        @include larger-than(tablet) {
+                            width: 200px;
+                            min-width: 200px;
+                        }
+                    }
+
+                    ul {
+                        margin: 0;
+                        padding: 15px 10px 20px 10px;
+                        border-bottom: 1px solid #cccccc;
+
+                        li {
+                            list-style-type: none;
+                            background: url(../images/check-mark.png) no-repeat left 5px;
+                            padding-left: 48px;
+                            color: $near_black;
+                            padding-bottom: 8px;
+                            // img{
+                            //     float:left;
+                            //     padding-right: 20px;
+                            //     padding-top: 5px;
+                            // }
+                        }
+
+                        @include larger-than(tablet) {
+                            border-bottom: none;
+                            padding: 40px 5px 0 5px;
+                        }
+                    }
+
+                    @include larger-than(tablet) {
+                        @include flex();
+                        border-bottom: 1px solid #cccccc;
+                        padding-bottom: 40px;
+                    }
+
+                    &.oneOffer {
+                        h3 {
+                            display: block;
+                            color:$near_black;
+                            position: relative;
+                            top: 2px;
+                            left: 2px;
+                            text-align: left;
+                            padding-top: 20px;
+                            text-transform: uppercase;
+                        }
+                        .heading {
+                            display: none;
+                        }
+
+                        flex-direction: column;
+
+                        ul {
+                            padding: 15px 5px 0 5px;
+                        }
+                    }
+
+                    &:last-of-type {
+                        @include larger-than(tablet) {
+                            border-bottom: none;
+                            padding-bottom: 20px;
+                        }
+                    }
+                }
+
+                @include larger-than(tablet) {
+                    padding: 0 4%;
+                    border-right: 1px solid #cccccc;
+                    min-height: 200px
+                }
+            }
+
+            .additional-info {
+                padding-bottom: 20px;
+                border-bottom: 1px solid #cccccc;
+
+                @include larger-than(tablet) {
+                    border-bottom: none;
+                    height: 150px;
+                    margin-top: 30px;
+                    padding-bottom: 0;
+                }
+
+                @include larger-than(desktop) {}
+
+                .info-wrapper {
+                    h3 {
+                        display: block;
+                        color: $near_black;
+                        position: relative;
+                        top: 2px;
+                        left: 2px;
+                        text-align: left;
+                        padding-top: 20px;
+                        text-transform: uppercase;
+                    }
+                    @include larger-than(tablet) {
+                        border-top: 1px solid #cccccc;
+                        margin-left: 4%;
+                        padding-right: 4%;
+                        padding-left: 8px;
+                        padding-top: 10px;
+                    }
+                }
+            }
+
+            .get-started {
+                p {
+                    padding-bottom: 4px;
+                }
+
+                @include larger-than(tablet) {
+                    padding: 0 8% 0 8%;
+                }
+
+                @include larger-than(desktop) {
+                    padding: 0 20% 0 8%;
+                }
+
+                h3 {
+                    display: block;
+                    color: $near_black;
+                    position: relative;
+                    top: 2px;
+                    left: 2px;
+                    text-align: left;
+                    padding-top: 20px;
+                    text-transform: uppercase;
+                }
+            }
+
+            .questions {
+                padding-bottom: 28px;
+                padding-top: 15px;
+
+                @include larger-than(tablet) {
+                    padding: 0;
+                    border-top: 1px solid #cccccc;
+                    height: 150px;
+                    box-sizing: border-box;
+                }
+
+                .ques-wrapper {
+                    border-top: solid 1px #cccccc;
+                    h3 {
+                        display: block;
+                        color: $near_black;
+                        position: relative;
+                        top: 2px;
+                        left: 2px;
+                        text-align: left;
+                        text-transform: uppercase;
+                        padding-top: 20px;   
+                        @include larger-than(tablet){
+                           padding-top: 0px;     
+                        }
+                    }
+
+                    @include larger-than(tablet) {
+                        border-left: solid 1px #cccccc;
+                        margin-top: 30px;
+                        padding: 0 8%;
+                        border-top: none;
+                    }
+
+                    span {
+                        &.title {
+                            @include larger-than(tablet) {
+                                padding-top: 0;
+                            }
+                        }
+                    }
+                }
+
+                p {
+                    @include larger-than(tablet) {
+                        max-width: 300px;
+                    }
+
+                    span {
+                        display: block;
+                        width: 200px;
+
+                        @include larger-than(tablet) {
+                            //min-width:768px
+                            display: inline-block;
+                        }
+                    }
+
+                    a {
+                        color: $citi_blue;
+                        text-decoration: underline;
+
+                        &.visit {
+                            padding: 2px 0 7px;
+
+                            @include larger-than(tablet) {
+                                display: inline;
+                            }
+
+                            &:hover,
+                            &:focus {
+                                color: $dark_blue;
+                                text-decoration: underline;
+                            }
+                        }
+
+                        &.phone-no {
+                            @include larger-than(tablet) {
+                                text-decoration: none;
+                                pointer-events: none;
+                                // color: #002a54;
+                                color:$near_black;
+                                cursor: default;
+                                display: inline-block;
+                            }
+                        }
+
+                        &.phone {
+                            @include larger-than(tablet) {
+                                color: inherit;
+                                text-decoration: none;
+                                pointer-events: none;
+                                cursor: default;
+                            }
+
+                            @include larger-than(desktop) {
+                                color: inherit;
+                                text-decoration: none;
+                                pointer-events: none;
+                                cursor: default;
+                            }
+                        }
+
+                        &.first-number {
+                            @include larger-than(tablet) {
+                                // color: #002a54;
+                                color: $near_black;
+                                pointer-events: none;
+                                cursor: default;
+                                text-decoration: none;
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .citi-btn {
+                margin: 22px 0 14px;
+                order: 2;
+                width: 154px;
+                height: 36px;
+                line-height: 36px;
+
+                @include larger-than(tablet) {
+                    order: 1;
+                    margin: 20px 0;
+                    width: 174px;
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 16px;
+                }
+
+                @include larger-than(desktop) {
+                    width: 218px;
+                    height: 50px;
+                    font-size: 18px;
+                    line-height: 50px;
+                }
+
+                &:hover,
+                &:focus {
+                    background-color: $citi_blue;
+                }
+
+            }
+
+            .terms {
+                color: $citi_blue;
+                font-size: 16px;
+                margin: 0 auto;
+                order: 1;
+
+                @include larger-than(tablet) {
+                    order: 3;
+                    font-size: 16px;
+                    margin-left: 2px;
+                    margin-top: -16px;
+                }
+
+                @include larger-than(desktop) {
+                    margin-top: 15px;
+                }
+
+                &:hover,
+                &:focus {
+                     color: $dark_blue;
+                }
+
+                sup {
+                    display: inline-block;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

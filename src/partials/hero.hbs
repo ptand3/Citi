@@ -1,0 +1,17 @@
+<section class="hero">
+    <div class="box">
+        <div class="top">
+            <h1>Don’t miss out on<span class="heading-offer"> our limited-time <span class="hide-checking">checking</span> offers</span>
+            </h1>
+            <p class="sentence">Citi rates and promotional offers may vary between locations. <span class="last-sentence">Looks
+                    like
+                    your home zip code is: 
+                    <span id="detectedZip" aria-hidden="false"
+                        class="state-text">{{#if htmlWebpackPlugin.options.localDev}}33133{{else}}<%= szGeoZip %>{{/if}}</span>.&nbsp;<button
+                        class="state change open-zip-selector" aria-label="Change my home state">Change</button>
+                </span>
+            </p>
+        </div>
+    </div>
+
+</section>

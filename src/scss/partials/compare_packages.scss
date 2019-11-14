@@ -1,0 +1,446 @@
+.compare-packages {
+    height: max-content;
+    .wrapper {
+        background-color: $white;
+        @include larger-than(tablet) {
+            width: 100%;
+            max-width: 1362px;
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    h3{
+        font-family: "interstate-bold";
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 300;
+    }
+    h2{
+        box-shadow: 10px 4px 56px 10px rgba(219, 219, 219, 0.5);
+        background-color: $white;
+        margin: 0 auto;
+        text-align: center;
+        padding: 16px 0 16px 0;
+        outline: none;
+        cursor: pointer;
+        background-color: $white;
+        border: none;
+        width: 100%;
+        button{
+            color:$dark_blue;
+            padding: 5px;
+            // outline: 0;
+            font-size: 24px;
+            cursor: pointer;
+            @extend .font_regular;
+            background-color: transparent;
+            border: none;
+            &:after {
+                content: "";
+                background: url('../images/caret.png') no-repeat center;
+                background-size: cover;
+                width: 19px;
+                height: 10px;
+                display: inline-block;
+                transition: all 0.4s ease;
+                margin-left: 10px;
+                @include larger-than(tablet) {
+                    width: 32px;
+                    height: 16px;
+                    margin-left: 30px;
+                }
+            }
+            &.active {
+                &:after {
+                    transform: rotateZ(-180deg);
+                    top: 0;
+                }
+            }
+        }
+        @include larger-than(tablet) {
+            padding: 25px 0 25px 0;
+            // font-size: 42px;
+        }
+    }
+    .bottom {
+        @include flex();
+        flex-direction: column;
+        padding: 0 16px;
+        .terms {
+            color: $citi_blue;
+            font-size: 16px;
+            margin: 0 auto;
+            order: 1;
+            @include larger-than(tablet) {
+                order: 3;
+                font-size: 16px;
+                margin-left: 2px;
+                margin-top: -16px;
+            }
+            @include larger-than(desktop) {
+                margin-top: 15px;
+            }
+            &:hover,
+            &:focus {
+                outline:0;
+                outline:1px solid  #4D90FE;
+                color: $near_black;
+            }
+            sup {
+                display: inline-block;
+                text-decoration: none;
+            }
+        }
+        .top-title {
+            @include flex();
+            @extend .font_regular;
+            flex-direction: column;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: $near_black;
+            line-height: 1.67;
+            @include larger-than(tablet) {
+                font-size: 16px;
+                text-align: left;
+            }
+            ul {
+                @include flex();
+                width: 100%;
+                border-bottom: 1px solid #cccccc;
+
+                li {
+                    span[aria-label] {
+                        @include flex();
+                        text-indent: -99999999px;
+                        border: 1px solid transparent;
+                    }
+                    padding: 16px 5px;
+                    width: 33%;
+                    box-sizing: border-box;
+                    text-align: center;
+                    margin-right: 1px;
+
+                    &:focus{
+                        outline: none;
+                        outline: 1px solid #4D90FE;
+                    }
+                    &.basic-account{
+                        margin-right: 0px;           
+                    }
+                    &:first-child {
+                        display: none;
+                        width:"";
+                        @include larger-than(tablet) {
+                            display: block;
+                            width: 40%;
+                            padding: 36px 5px;
+                            text-align: left;
+                            box-sizing: border-box;
+                        }
+                    }
+                    @include larger-than(tablet) {
+                        width:20%;
+                        padding: 36px 12px;
+                        font-family: "interstate-bold";
+                        font-weight: 300;
+                        color: $dark_blue;
+                    }
+                    &.show {
+                        background-color: #0f73b2;
+                        color: $white;
+                    }
+                    span {
+                        color: $near_black;
+                        &.title {
+                            display: block;
+                            @extend .font_regular;
+                            position: relative;
+                            text-align: center;
+                            text-transform: uppercase;
+                            font-family: "interstate-bold";
+                            @include larger-than(desktop) {
+                                font-size: 18px;
+                            }
+                        }
+                        &.dollar {
+                            @extend .font_regular;
+                            vertical-align: top;
+                            position: relative;
+                            font-size: 16px;
+                            @include larger-than(tablet) {
+                                font-size: 28px;
+                            }
+                            @include larger-than(desktop) {
+                                font-size: 32px;
+                            }
+                        }
+                        &.ammount {
+                            display: inline-block;
+                            @extend .font_regular;
+                            position: relative;
+                            font-size: 34px;
+                            line-height: 0.91;
+                            letter-spacing: -1.4px;
+                            padding-top: 4px;
+                            @include larger-than(tablet) {
+                                top: 4px;
+                                font-size: 61px;
+                            }
+                            @include larger-than(desktop) {
+                                top: 4px;
+                                font-size: 69px;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(2) {
+                    li {
+                        &:first-child {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+                    @include larger-than(tablet) {
+                        display: none;
+                    }
+                }
+                &:last-child {
+                    li {
+                        &.show {
+                            background: none;
+                            @include larger-than(tablet) {
+                                background-color: $light_gray;
+                            }
+                            span {
+                                color:#0f73b2;
+                                &.title {
+                                    color:#0f73b2;
+                                }
+                            }
+                        }
+                        .package-heading {
+                            @include flex();
+                            overflow: hidden;
+                            height: 0;
+                            width: 0;
+                            border: 1px solid transparent;
+                            @include larger-than(tablet){
+                                        text-indent: -99999999px;
+                                    }
+                        }
+                    }
+                }
+            }
+            .package-title {
+                @include flex();
+                flex-direction: row;
+                flex-basis: 65%;
+                span {
+                    display: none;
+                    @include larger-than(tablet) {
+                        display: block;
+                        text-align: left;
+                        padding: 36px 6px;
+                        font-family: "interstateregular";
+                    }
+                }
+            }
+            .offer-title {
+                @include flex();
+                flex-direction: row;
+            }
+        }
+        .terms {
+            color: $citi_blue;
+            font-size: 16px;
+            margin: 0 auto;
+            order: 1;
+            text-transform: none;
+            @include larger-than(tablet) {
+                order: 3;
+                font-size: 16px;
+                margin-left: 2px;
+                margin-top: -16px;
+            }
+            @include larger-than(desktop) {
+                margin-top: 15px;
+            }
+            &:hover,
+            &:focus {
+                color: $near_black;
+            }
+            sup {
+                display: inline-block;
+                text-decoration: none;
+            }
+        }
+        .package-details {
+            //            @include flex();
+            .package {
+                margin-bottom: 34px;
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    li {
+                        border-bottom: 1px solid #cccccc;
+                        ul {
+                            display: flex;
+                            list-style: none;
+                            margin: 0;
+                            padding: 0;
+                            @extend .font_light;
+                            font-size: 14px;
+                            line-height: 22px;
+                            @include flex();
+                            // align-items: center;
+                            align-content: center;
+                            box-sizing: border-box;
+
+                            .content-200{
+                                @include smaller-than(tablet){
+                                    width:80% !important;
+                                }
+                              
+                            } 
+                            li {
+                                .package-heading {
+                                    @include flex();
+                                    overflow: hidden;
+                                    height: 0;
+                                    width: 0;
+                                    border: 1px solid transparent;
+                                    @include larger-than(tablet){
+                                        text-indent: -99999999px;
+                                    }
+                                }
+                                
+                                border: none;
+                                width: 40%;
+                                color:$near_black; 
+                                text-align: center;
+                                padding: 0 5px;
+
+                              
+
+                                &.offer200{
+                                    margin-right: 1px;
+                                }
+                                &.offer600,
+                                &.offer200,
+                                &.offer500 {
+                                    display: none;
+                                    &.show {
+                                        width:35%;
+                                        padding:35px 5px;
+                                        display: block;
+                                    
+                                        @include larger-than(tablet){
+                                            background-color: $light_gray;
+                                            padding: 25px 22px 25px;
+                                            width: 20%;
+                                        }
+                                    }
+                                    @include larger-than(tablet) {
+                                        display: block;
+                                        padding: 25px 22px 25px;
+                                        width: 20%;
+                                        box-sizing: border-box;
+                                    }
+                                    img{
+                                        vertical-align: inherit;
+                                        margin-bottom: 8px;
+                                    }
+                                }
+                                &:first-child {
+                                    display: flex;
+                                    box-sizing: border-box;
+                                    width: 65%;
+                                    align-self: center;
+                                    color: $near_black;
+                                    padding-right: 30px;
+                                    text-align: left;
+                                    font-size: 16px;
+                                    @extend .font_bold;
+                                    @include larger-than(tablet){
+                                        width: 40%
+                                    }
+
+                                    &:focus{
+                                        outline:none;
+                                        outline:1px solid  #4D90FE;
+                                    }
+
+                                    span{
+                                        align-self: center;
+                                    }
+
+                                    a {
+                                        text-decoration: none;
+                                        color: inherit;
+                                        &:focus,
+                                        &:hover {
+                                            color: $citi_blue;
+                                            text-decoration: underline
+                                        }
+                                    
+                                    }
+                                }
+                                // &.tick {
+                                //     background: url(../images/check-mark.png) no-repeat center top;
+                                //     background-position-y: 15%;
+                                // }
+                                &.nil {
+                                    background: url(../images/line.png) no-repeat center center;
+                                    padding:45px;
+                                }
+                                
+                                &:focus{
+                                    outline:none;
+                                    outline:1px solid  #4D90FE;
+                                }
+                            }
+                        }
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                    }
+                }
+                &.package-content {}
+                .inssurance {
+                    padding: 16px 14px;
+                    border: 1px solid $black;
+                    font-size: 12px;
+                    margin: 20px 6px;
+                    font-family: "interstate-bold";
+                    // font-weight:bold;
+                    text-align: center;
+                    @include larger-than(tablet) {
+                        padding: 34px 64px;
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+        @include larger-than(tablet) {
+            padding: 0 4%;
+        }
+        &.panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            opacity: 0;
+            display: none;
+        }
+        &.panel-open {
+            max-height: 100%;
+            transition: all 0.4s ease;
+            opacity: 1;
+            display: block;
+        }
+    }
+}

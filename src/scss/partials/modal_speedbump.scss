@@ -1,0 +1,80 @@
+.speedbump-overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 99999;
+	overflow-y: auto;
+
+	.dialog-box {
+		max-width: 600px;
+		position: relative;
+		margin: 10% auto;
+		padding: 40px 40px 30px;
+		background: $white;
+
+		.dialog-title {
+			@extend .font_light;
+			font-weight: normal;
+			font-size: 42px;
+			line-height: 50px;
+			letter-spacing: -0.02em;
+			padding: 0;
+			margin: 0;
+		}
+
+		.continue {
+			margin-right: 0;
+		}
+
+		.close-dialog {
+			display: block;
+			font-family: $arial;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 26px;
+			height: 26px;
+			font-size: 24px;
+			line-height: 23.5px;
+			text-align: center;
+			border: none;
+			outline: none;
+			color: $dark_gray;
+			background-color: $white;
+			padding: 0;
+            border-radius: 50%;
+			&:focus:not(.touch-device),
+        	&:hover:not(.touch-device) {
+                color: $white;
+				background-color: $dark_gray;
+				cursor: pointer;
+			}
+		}
+	}
+	.btn-blue {
+        color: $white;
+        background-color: $citi_blue;
+        &:focus:not(.touch-device),
+        &:hover:not(.touch-device) {
+            color: $white;
+            background-color: $dark_blue;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    } 
+}
+
+html.dialog-no-scrolling,
+body.dialog-no-scrolling {
+    overflow: hidden;
+}
+html.dialog-no-scrolling-iOS,
+body.dialog-no-scrolling-iOS {
+	overflow: hidden;
+	position: fixed;
+	width: 100vw;
+}
